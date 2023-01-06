@@ -68,8 +68,3 @@ var layercontrol = L.control.layers({
     }, 
       
 ).addTo(map);
-
-// Easy Button
-// L.easyButton('fa-crosshairs fa-lg', function(btn, map){
-//     alert('Map center is at: ' + map.getCenter().toString());
-// }).addTo(map);
