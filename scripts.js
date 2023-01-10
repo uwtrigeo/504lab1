@@ -49,7 +49,7 @@ function onLocationFound(e) {
         map.removeLayer(light);
         map.addLayer(dark);
         }
-    // console.log(currentTime);
+    
 }
 
 map.on('locationfound', onLocationFound); //this is the event listener
@@ -68,3 +68,11 @@ var layercontrol = L.control.layers({
     }, 
       
 ).addTo(map);
+
+// on a production site, omit the "lc = "!
+L.control.locate({
+    strings: {
+      title: "Show me where I am, yo!"
+    }
+  })
+  .addTo(map);
