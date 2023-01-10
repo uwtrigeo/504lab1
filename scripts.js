@@ -41,6 +41,7 @@ function onLocationFound(e) {
     // console.log(sunset);
 
     var currentTime = new Date().getHours();
+    // console.log(currentTime);
         if (sunrise < currentTime && currentTime < sunset){
         map.removeLayer(dark);
         map.addLayer(light);
@@ -69,10 +70,10 @@ var layercontrol = L.control.layers({
       
 ).addTo(map);
 
-// on a production site, omit the "lc = "!
+// Location button
 L.control.locate({
     strings: {
-      title: "Show me where I am, yo!"
+      title: 'Show me where I am.'
     }
   })
   .addTo(map);
