@@ -36,13 +36,17 @@ function onLocationFound(e) {
     var times = SunCalc.getTimes(new Date(), e.latitude, e.longitude);
     // console.log(times);
     var sunrise = times.sunrise.getHours();
-    // console.log(sunrise);
+    var riseMinute = sunrise*60 + times.sunrise.getMinutes();
+    // console.log(riseMinute);
     var sunset = times.sunset.getHours();
-    // console.log(sunset);
+    var setMinute = sunset*60 + times.sunset.getMinutes();
+    // console.log(setMinute);
 
     var currentTime = new Date().getHours();
-    // console.log(currentTime);
-        if (sunrise < currentTime && currentTime < sunset){
+    // console.log(currentTime)
+    var currTimeMin = currentTime*60 + new Date().getMinutes();
+    // console.log(currTimeMin);
+        if (riseMinute < currTimeMin && currTimeMin < setMinute){
         map.removeLayer(dark);
         map.addLayer(light);
         }
